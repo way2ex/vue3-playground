@@ -1,4 +1,12 @@
 # My vue3 playground project
+A playground project with vue3.x, TypeScript, ESLint, webpack and so on.
+Used to learn.
+
+## start
+```
+$ yarn 
+$ npm run dev
+```
 
 ## Use vue3
 
