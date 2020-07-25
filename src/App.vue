@@ -1,23 +1,15 @@
 <template>
-  <div @click="$emit('bad')" />
-  <div>88</div>
+    <header>
+        <h1>My vue3 playground</h1>
+    </header>
+    <router-view />
 </template>
 <script lang="ts">
 export default {
-    emits: ['good'],
-    setup(props) {
-
-        const b = [ 44, 3]
-        const a = (a) => { console.log(a) }
-        return {
-            a: 7,
-            b: 88
-        }
-    }
+    setup() {
+        return {}
+    },
 }
 </script>
 <style>
-div {
-  color: gold;
-}
 </style>

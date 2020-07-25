@@ -110,3 +110,15 @@ module.exports = {
     ]
 }
 ```
+
+- To use `webpack alias`, you should config `tsconfig.json`:
+```json
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [ "./src/*" ]
+        }
+    }
+}
+```

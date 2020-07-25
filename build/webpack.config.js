@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const webpack = require('webpack')
 const resolve = relativePath => path.resolve(process.cwd(), relativePath)
 
@@ -29,6 +30,7 @@ module.exports = {
             // extra re-export somehow causes webpack to always invalidate the module
             // on the first HMR update and causes the page to reload.
             'vue': '@vue/runtime-dom',
+            '@': resolve('./src'),
         },
     },
     module: {
@@ -61,8 +63,8 @@ module.exports = {
                 use: {
                     loader: 'ts-loader',
                     options: {
-                        appendTsSuffixTo: [/\.vue$/]
-                    }
+                        appendTsSuffixTo: [/\.vue$/],
+                    },
                 },
                 exclude: /node_modules/,
             },
@@ -70,9 +72,9 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
-                    'css-loader'
+                    'css-loader',
                 ],
-            }
+            },
         ],
     },
     plugins: [
@@ -82,6 +84,11 @@ module.exports = {
             filename: 'index.html',
             // chunks:['main'] // 与入口相对应，用于多页应用
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                resolve('./public/favicon.ico'),
+            ],
+        }),
         new VueLoaderPlugin(),
         // 开发环境
         // new webpack.HotModuleReplacementPlugin(),
@@ -89,6 +96,14 @@ module.exports = {
     devServer: {
         port: 9090,
         hot: true,
-        contentBase: resolve('./dist')
+        contentBase: resolve('./dist'),
+        // 404 will fallback to index.html
+        historyApiFallback: true,
+        // By passing an object this behavior can be controlled further using options like rewrites:
+        // historyApiFallback: {
+        //     rewrites: [
+        //         { from: /^\/$/, to: '/views/landing.html'
+        //     ],
+        // },
     },
 }

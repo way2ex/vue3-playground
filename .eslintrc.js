@@ -21,7 +21,7 @@ module.exports = {
     env: {
         browser: true,
         amd: true,
-        node: true
+        node: true,
     },
 
     // load plugin to load some ruleset
@@ -42,9 +42,9 @@ module.exports = {
         {
             files: [ 'build/*.js' ],
             rules: {
-                '@typescript-eslint/no-var-requires': 0
+                '@typescript-eslint/no-var-requires': 0,
             },
-        }
+        },
     ],
 
     rules: {
@@ -56,5 +56,7 @@ module.exports = {
         'no-extra-semi': 2,
         quotes: [ 2, 'single' ],
         semi: [ 2, 'never'],
-    }
+        'comma-dangle': ['error', 'always-multiline' ],
+        'vue/html-indent': [ 1, 4 ],
+    },
 }
