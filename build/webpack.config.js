@@ -16,6 +16,7 @@ module.exports = {
     },
     output: {
         path: resolve('./dist'),
+        publicPath: '/',
         // 可选模板值 hash, contenthash, chunkhash, name(module name), id(module id), query(阙疑),
         // 也可以用函数，函数参数会传入包含以上内容的对象
         // 开发环境不可以使用 contenthash 和 chunkhash，
