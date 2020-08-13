@@ -5,7 +5,7 @@
             <div class="item">
                 <setup-comp
                     :name="personName"
-                    :age="19"
+                    :age="compAge"
                     @greeted="onGreeted"
                 >
                     <template
@@ -16,6 +16,9 @@
                     </template>
                     <template #default>
                         This is other info.
+                        <button @click="changeAge">
+                            change age
+                        </button>
                     </template>
                 </setup-comp>
                 <setup-render
@@ -50,6 +53,10 @@ export default {
         const onGreeted = () => {
             showProfile.value = true
         }
+        const compAge = ref(29)
+        const changeAge = () => {
+            compAge.value++
+        }
 
         const setUpRenderName = ref('Danny')
         const onSayHello = () => {
@@ -58,6 +65,8 @@ export default {
         return {
             showProfile,
             personName,
+            compAge,
+            changeAge,
             setUpRenderName,
 
             onGreeted,
