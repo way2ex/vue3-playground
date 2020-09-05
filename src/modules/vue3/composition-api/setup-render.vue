@@ -1,5 +1,5 @@
 <script lang="ts">
-import { h, resolveComponent, Component } from 'vue'
+import { h, resolveComponent, FunctionalComponent } from 'vue'
 export default {
     name: 'SetupRender',
     components: {
@@ -22,7 +22,7 @@ export default {
             h('li', [ 'you can return a VNode in ', h('code', 'setup function') ]),
         ])
         const Example = resolveComponent('example')
-        return () => h(Example as Component, {
+        return () => h(Example as FunctionalComponent, {
             title: 'Setup return render',
         }, {
             $stable: true, // Vue won't force the child to update when the parent updates
