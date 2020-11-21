@@ -76,6 +76,14 @@ module.exports = {
                     'css-loader',
                 ],
             },
+            {
+                test: /\.less$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    'less-loader',
+                ],
+            },
         ],
     },
     plugins: [

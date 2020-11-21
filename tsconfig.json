@@ -10,7 +10,15 @@
         "allowJs": true,
         "moduleResolution": "node",
         "paths": {
-            "@/*": [ "./src/*" ]
-        }
-    }
+            "@/*": [ "./src/*" ],
+        },
+        "lib": [
+            "DOM",
+            "ES2020"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "typings/**/*.ts"
+    ]
 }

@@ -40,7 +40,7 @@ module.exports = {
     // overrides some rule for specified files
     overrides: [
         {
-            files: [ 'build/*.js' ],
+            files: ['build/*.js'],
             rules: {
                 '@typescript-eslint/no-var-requires': 0,
             },
@@ -50,13 +50,13 @@ module.exports = {
     rules: {
         '@typescript-eslint/no-explicit-any': 0,
         '@typescript-eslint/explicit-function-return-type': 0,
-        'indent': [ 2, 4, { 'SwitchCase': 1 } ],
+        'indent': [2, 4, { 'SwitchCase': 1 }],
         'no-multi-spaces': 2,
         'no-trailing-spaces': 2,
         'no-extra-semi': 2,
-        quotes: [ 2, 'single' ],
-        semi: [ 2, 'never'],
-        'comma-dangle': ['error', 'always-multiline' ],
-        'vue/html-indent': [ 1, 4 ],
+        quotes: [2, 'single'],
+        semi: [2, 'never'],
+        'comma-dangle': ['error', 'always-multiline'],
+        'vue/html-indent': [1, 4],
     },
 }

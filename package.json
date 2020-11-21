@@ -31,6 +31,8 @@
     "eslint": "^7.5.0",
     "eslint-plugin-vue": "^7.0.0-beta.0",
     "html-webpack-plugin": "^4.3.0",
+    "less": "^3.12.2",
+    "less-loader": "^7.1.0",
     "ts-loader": "^8.0.1",
     "typescript": "^3.9.7",
     "vue-loader": "^16.0.0-beta.4",
@@ -42,8 +44,8 @@
   "dependencies": {
     "core-js": "3",
     "lodash": "^4.17.19",
-    "vue": "^3.0.0-rc.5",
-    "vue-router": "^4.0.0-beta.3",
-    "vuex": "^4.0.0-beta.4"
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.0-rc.3",
+    "vuex": "^4.0.0-rc.1"
   }
 }
