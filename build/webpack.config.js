@@ -96,6 +96,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 resolve('./public/favicon.ico'),
+                resolve('./public/_redirects'),
             ],
         }),
         new VueLoaderPlugin(),
